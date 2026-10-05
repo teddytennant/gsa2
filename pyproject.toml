@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "gsa2"
+version = "0.1.0"
+description = "Gated Slot Attention-2: two-sided associative memory correction in linear attention (arXiv 2610.02816)"
+requires-python = ">=3.10"
+dependencies = ["jax", "numpy"]
+
+[project.optional-dependencies]
+test = ["pytest"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/gsa2"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
